@@ -5,11 +5,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lesson8</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+    <div class="container">
+        <ul class="hero__menu">
+            <li><a href="index.html"><img src="img/logo.svg" alt="logo"></a></li>
+            <li><a href="contacts.html"><img src="img/address-book-solid.svg" alt="contacts"></a></li>
+        </ul>
+    </div>
+    <div class="contact-us">
+        <div class="contact-us__content container">
+            <h2 class="contact-us__header">Contact Us</h2>
+            <p class="contact-us__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quis.</p>
+        </div>
+    </div>
+    <form class="contact-form container" action="#">
+        <div class="contact-form__content">
+            <div class="contact-form__links">
+                <img src="img/gal-and-succulent.png" alt="gal-and-succulent" class="contact-form__image">
+                <div class="contact-form__link-item">
+                    <h4 class="contact-form__title-text contact-form__title">Address</h4>
+                    <p class="contact-form__text">Id convallis placerat sit sed duis id amet volutpat quam a, pharetra.
+                    </p>
+                </div>
+                <div class="contact-form__link-item">
+                    <h4 class="contact-form__title-text contact-form__title">Phone</h4>
+                    <ul>
+                        <li class="contact-form__text contact-form__list-item"><img src="img/phone.svg"
+                                alt="phone">+1-202-555-0122</li>
+                        <li class="contact-form__text contact-form__list-item"><img src="img/phone.svg"
+                                alt="phone">+1-202-555-0123</li>
+                    </ul>
+                </div>
+                <div class="contact-form__link-item">
+                    <h4 class="contact-form__title-text contact-form__title">Online service</h4>
+                    <ul>
+                        <li class="contact-form__list-item"><a href="mailto:test@test.com"
+                                class="contact-form__text"><img src="img/envelope.svg" alt="mailto"> test@test.com</a>
+                        </li>
+                        <li class="contact-form__list-item"><a href="http://www.example.com" target="_blank"
+                                class="contact-form__text"><img src="img/earth-ball.svg" alt="web">
+                                http://www.example.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contact-form__message">
+                <h4 class="contact-form__title-text">Send us message</h4>
+                <div class="contact-form__group">
+                    <label class="contact-form__label" for="full-name">Full Name</label>
+                    <input class="contact-form__input" type="text" id="full-name" placeholder="John Doe">
+                </div>
+                <div class="contact-form__group">
+                    <label class="contact-form__label" for="email">Email</label>
+                    <input class="contact-form__input" type="email" id="email" placeholder="test@test.com">
+                </div>
+                <div class="contact-form__group">
+                    <label class="contact-form__label" for="message">Message</label>
+                    <textarea class="contact-form__input contact-form__input-textarea" id="message" cols="30" rows="10"
+                        placeholder="Tell us what you think!"></textarea>
+                </div>
+                <button class="contact-form__button" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+    <div class="container">
+        <iframe src="https://api-maps.yandex.ru/frame/v1/-/CCUea4dTkC?" class="contact-us__map"
+            frameborder="0"></iframe>
+    </div>
+    <div class="footer">
+        <div class="footer__content">
+            <div class="footer__top container">
+                <div class="footer__top-left">
+                    <h3 class="footer__top-header">Intersted to woek with our team?</h3>
+                    <p class="footer__top-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum tenetur
+                        non voluptas eaque provident commodi, natus cupiditate, dolorum quia cumque earum a, ratione
+                        velit.
+                    </p>
+                </div>
+                <a href="#" class="footer__lets-talk-link">Let’s Talk</a>
+            </div>
+            <hr class="footer__line">
+            <div class="footer__bottom container">
+                <ul class="footer__contact-list">
+                    <li class="footer__contact-list-item">
+                        <p class="footer__contact-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </li>
+                    <li class="footer__contact-list-item">
+                        <p class="footer__contact-text">+7-812-7313-4321</p>
+                    </li>
+                    <li class="footer__contact-list-item">
+                        <p class="footer__contact-text">hello.site@gmail.com</p>
+                    </li>
+                </ul>
+                <p class="footer__bottom-text">2021 All rights reserved.</p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
