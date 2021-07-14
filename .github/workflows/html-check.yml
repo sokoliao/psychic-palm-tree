@@ -8,7 +8,7 @@ jobs:
     - name: HTML5 Validator
       uses: Cyb3r-Jak3/html5validator-action@v0.6.1
       with:
-        root: www/
+        root: ./
         action_debug: true
 
         
