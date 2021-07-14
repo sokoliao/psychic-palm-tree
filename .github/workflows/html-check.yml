@@ -10,5 +10,36 @@ jobs:
       with:
         root: ./
         action_debug: true
-
+    - name: HTML5 Validator ✅
+        if: ${{ success() }}
+        # set the merge commit status check
+        # using GitHub REST API
+        # see https://docs.github.com/en/rest/reference/repos#create-a-commit-status
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "context": "HTML5 Validator",
+            "state": "success",
+            "description": "HTML5 Validator passed",
+            "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }'
+      - name: HTML5 Validator 🚨
+        if: ${{ failure() }}
+        # set the merge commit status check
+        # using GitHub REST API
+        # see https://docs.github.com/en/rest/reference/repos#create-a-commit-status
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "context": "HTML5 Validator",
+            "state": "failure",
+            "description": "HTML5 Validator failed",
+            "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }'
         
