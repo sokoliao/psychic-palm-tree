@@ -1,0 +1,40 @@
+name: HTML Check
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: HTML5 Validator
+      uses: Cyb3r-Jak3/html5validator-action@v0.6.1
+      with:
+        root: ./
+        action_debug: true
+        css: true
+    - name: HTML5 Validator ✅
+      if: ${{ success() }}
+      run: |
+        curl --request POST \
+        --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+        --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+        --header 'content-type: application/json' \
+        --data '{
+          "context": "HTML5 Validator",
+          "state": "success",
+          "description": "HTML5 Validator passed",
+          "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        }'
+    - name: HTML5 Validator 🚨
+      if: ${{ failure() }}
+      run: |
+        curl --request POST \
+        --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+        --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+        --header 'content-type: application/json' \
+        --data '{
+          "context": "HTML5 Validator",
+          "state": "failure",
+          "description": "HTML5 Validator failed",
+          "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        }'
+      
