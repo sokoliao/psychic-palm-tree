@@ -10,6 +10,7 @@ jobs:
       with:
         root: ./
         action_debug: true
+        css: true
     - name: HTML5 Validator ✅
       if: ${{ success() }}
       run: |
