@@ -1,3 +1,6 @@
+$tablet-size: 1024px;
+$mobile-size: 667px;
+
 * {
     margin: 0;
     padding: 0;
@@ -349,17 +352,23 @@
     opacity: 0.4;
 }
 
+.contacts-nav {
+    @media (max-width: $tablet-size) {
+        margin-top: -32px;
+        padding: 0 32px;
+    }
+    @media (max-width: $mobile-size) {
+        margin-top: 0px;
+        padding: 0 16px;
+    }
+}
+
 .contact-us {
+    margin-top: 56px;
     min-height: 250px;
     background-image: url("img/blue-bubles.png");
     background-position: center;
     background-size: cover;
-    &__nav {
-        @media (max-width: 1024px) {
-            margin-top: -32px;
-            padding: 0 32px;
-        }
-    }
     &__content {
         display: flex;
         flex-direction: column;
@@ -375,10 +384,13 @@
         text-align: center;
         letter-spacing: 0.04em;
         color: #FFFFFF;
+        @media (max-width: $mobile-size) {
+            font-size: 24px;
+            line-height: 28px;
+        }
     }
     &__text {
-        margin-top: 16px;
-        margin-bottom: 48px;
+        margin: 16px 0 48px 0;
         width: 80%;
         font-family: Roboto;
         font-style: normal;
@@ -388,6 +400,12 @@
         text-align: center;
         letter-spacing: 0.04em;
         color: rgba(255, 255, 255, 0.6);
+        @media (max-width: $mobile-size) {
+            width: auto;
+            margin: 32px 16px 56px 16px;
+            font-size: 16px;
+            line-height: 30px;
+        }
     }
 }
 
@@ -397,7 +415,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        @media (max-width: 1024px) {
+        @media (max-width: $tablet-size) {
             flex-direction: column;
             align-items: center;
         }
@@ -438,11 +456,14 @@
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        width: 300px;
+        max-width: 300px;
         padding-right: 100px;
         box-sizing: border-box;
-        @media (max-width: 1024px) {
+        @media (max-width: $tablet-size) {
             padding: 0;
+        }
+        @media (max-width: $mobile-size) {
+            width: inherit;
         }
     }
     &__link-item {
@@ -451,27 +472,19 @@
         flex-direction: column;
         align-items: start;
     }
-    &__message {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        @media (max-width: 1024px) {
-            margin-top: 56px;
-        }
-    }
     &__list-item {
         list-style-type: none;
     }
     &__image {
-        width: 300px;
+        max-width: 300px;
         padding: 56px 0;
-        @media (max-width: 1024px) {
+        @media (max-width: $tablet-size) {
             padding: 0 0 8px 0;
         }
     }
 
     &__message {
-        box-sizing: border-box;
+        
         width: 520px;
         display: flex;
         flex-direction: column;
@@ -480,6 +493,11 @@
         box-shadow: 5px 10px 50px rgba(16, 112, 177, 0.2);
         border-radius: 10px;
         padding: 56px;
+        @media (max-width: $mobile-size) {
+            width: auto;
+            margin: 32px 16px 0px 16px;
+            padding: 32px;
+        }
     }
     &__message > h4 {
         margin-bottom: 16px;
@@ -505,6 +523,10 @@
         letter-spacing: 0.04em;
         color: #1F3F68;
         opacity: 0.2;
+        @media (max-width: $mobile-size) {
+            font-size: 14px;
+            line-height: 30px;
+        }
     }
     &__input-textarea {
         height: 144px;
@@ -548,7 +570,7 @@
     border: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $tablet-size) {
 
     .hero__content {
         padding: 0 32px;
@@ -607,7 +629,7 @@
     }
 }
 
-@media (max-width: 667px) {
+@media (max-width: $mobile-size) {
 
     .hero__content {
         padding: 0 16px;
